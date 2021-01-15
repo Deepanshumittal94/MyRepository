@@ -1,6 +1,7 @@
 package demo.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,9 +23,8 @@ public class DemoModel {
 		this.emailId = emailId;
 	}
 	
-	
-	
-	
+	@Embedded
+	private Check check;	
 
 	public DemoModel() {
 		super();

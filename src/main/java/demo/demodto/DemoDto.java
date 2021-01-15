@@ -1,6 +1,8 @@
 package demo.demodto;
 
 
+import javax.persistence.Column;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,8 +18,10 @@ import lombok.ToString;
 public class DemoDto {
 
 	
-	public DemoDto(String name, Long mobile, String emailId) {
+	public DemoDto(String name, Long mobile, String emailId, Integer checkField, String checkList) {
 		super();
+		this.checkField = checkField;
+		this.checkList = checkList;
 		this.name = name;
 		this.mobile = mobile;
 		this.emailId = emailId;
@@ -26,6 +30,22 @@ public class DemoDto {
 	public DemoDto() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Integer getCheckField() {
+		return checkField;
+	}
+
+	public void setCheckField(Integer checkField) {
+		this.checkField = checkField;
+	}
+
+	public String getCheckList() {
+		return checkList;
+	}
+
+	public void setCheckList(String checkList) {
+		this.checkList = checkList;
 	}
 
 	public String getName() {
@@ -57,6 +77,11 @@ public class DemoDto {
 		this.emailId = emailId;
 	}
 
+	
+	private Integer checkField;
+
+	private String checkList;
+	
 	private String name;
 	
 	private Long mobile;

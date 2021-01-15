@@ -1,5 +1,6 @@
 package demo.serviceimpl;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -54,7 +55,7 @@ public class DemoServiceImpl implements DemoService {
 		demoRepo.delete(demoOptional.get());
 		return "success";
 	}
-
+/*
 	@Override
 	public Object find(HttpHeaders httpHeader) {
 		Optional<DemoModel> demoOptional =  demoRepo.findByEmailId(httpHeader.getFirst("emailId"));
@@ -63,6 +64,25 @@ public class DemoServiceImpl implements DemoService {
 		else
 			return "Not Found";
 		
+	}
+*/
+	
+	@Override
+	public Object find(HttpHeaders httpHeader) {
+		List<String> abc = new ArrayList<>();
+		
+		abc.add("abc");
+		abc.add("xyz");
+		
+		Integer i = 1;
+		List<DemoModel> demoOptional =  demoRepo.findByCheckListInAndCheckField(abc, i);
+		
+		return demoOptional;
+		//if(demoOptional.isPresent())
+			//return demoOptional.get();
+		//else
+			//return "Not Found";
+			
 	}
 
 	
